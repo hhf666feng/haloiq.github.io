@@ -673,6 +673,7 @@
 <li><a href="#fix-import-package">57.6.1. 无效导入包自动整理设置</a></li>
 <li><a href="#maven-setting">57.6.2. maven插件设置</a></li>
 <li><a href="#p3c-install">57.6.3. Alibaba P3C插件安装</a></li>
+<li><a href="#_设置统一header">57.6.4. 设置统一Header</a></li>
 </ul>
 </li>
 </ul>
@@ -2843,7 +2844,7 @@ Domain Service可以调用当前领域内的领域对象(也就是既可以调�
 <h2 id="halo-overview"><a class="anchor" href="#halo-overview"></a><a class="link" href="#halo-overview">15. Halo Framework概述</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Halo Framework是基于`DDD+CQRS+扩展点+流程编排`的应用框架，致力于采用领域驱动的设计思想，规范控制程序员的随心所欲，从而解决软件的复杂性问题。</p>
+<p>Halo Framework是基于 <code>DDD+CQRS+扩展点+流程编排</code> 的应用框架，致力于采用领域驱动的设计思想，规范控制程序员的随心所欲，从而解决软件的复杂性问题。</p>
 </div>
 <div class="paragraph">
 <p>Halo设计原则简单，即在高内聚，低耦合，可扩展，易理解的指导思想下，尽可能的贯彻面向对象的设计思想和领域驱动设计的原则。</p>
@@ -13446,6 +13447,36 @@ Halo框架固定使用规范中定义的分组。</code></pre>
 </div>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_设置统一header"><a class="anchor" href="#_设置统一header"></a><a class="link" href="#_设置统一header">57.6.4. 设置统一Header</a></h4>
+<div class="paragraph">
+<p>可以通过下面的方式,统一设置如下图所示:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/idea-set/sz-header.png" alt="sz header">
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="txt">#if (${PACKAGE_NAME} &amp;&amp; ${PACKAGE_NAME} != &quot;&quot;)
+package ${PACKAGE_NAME};
+#end
+
+/**
+ *
+ * 〈${DESCRIPTION}〉
+ *
+ * @author xujin
+ * @date ${DATE} ${TIME}
+ * @since ${version}
+ */
+public class ${NAME} {
+
+}</code></pre>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -13468,7 +13499,7 @@ Halo框架固定使用规范中定义的分组。</code></pre>
 <div id="footer">
 <div id="footer-text">
 version: 2.0.0.REALESE<br>
-Last updated 2020-08-16 02:36:41 UTC
+Last updated 2020-08-19 16:10:44 UTC
 </div>
 </div>
 </body>
